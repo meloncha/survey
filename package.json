@@ -1,0 +1,23 @@
+{
+  "name": "survey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd back && nodemon\" \"cd front && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meloncha/survey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meloncha/survey/issues"
+  },
+  "homepage": "https://github.com/meloncha/survey#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
