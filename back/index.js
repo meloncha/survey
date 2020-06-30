@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 4000;
 const bodyParser = require('body-parser');
-const {Survey} = require('./model/survey');
+const Survey = require('./model/survey');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -16,7 +16,8 @@ mongoose.connect(process.env.MONGO_DB, {
 }).then(() => console.log('MongoDB Connected...'))
 	.catch(err => console.log(err));
 
-app.post('/', (req, res) => {
+
+	app.post('/', (req, res) => {
 		const survey = new Survey({
 			gender: req.body.gender,
 			animal: req.body.animal
@@ -42,7 +43,6 @@ app.get('/result', async(req,res) => {
 	}
  res.json(result);
 })
-
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
